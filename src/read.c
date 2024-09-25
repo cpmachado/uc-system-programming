@@ -1,3 +1,4 @@
+/* Copyright © 2024 cpmachado */
 /*
  * I added the cli argument as to simplify the repository
  **/

@@ -1,3 +1,4 @@
+/* Copyright © 2024 cpmachado */
 #include <errno.h>
 #include <fcntl.h>
 #include <stdio.h>

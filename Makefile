@@ -1,4 +1,4 @@
-.PHONY: all clean
+.PHONY: all clean lint
 
 CC ?= gcc
 CFLAGS = -W -Wall -pedantic -std=c99
@@ -12,7 +12,11 @@ BIN_DIR = $(BUILD_DIR)/bin
 
 SRC = $(wildcard $(SRC_DIR)/*.c)
 OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
-BIN = $(BIN_DIR)/hello $(BIN_DIR)/filemode $(BIN_DIR)/remove $(BIN_DIR)/read
+BIN =\
+	 $(BIN_DIR)/hello\
+	 $(BIN_DIR)/filemode\
+	 $(BIN_DIR)/remove\
+	 $(BIN_DIR)/read
 OUT = newFile.txt
 
 all: $(BIN)
@@ -20,6 +24,9 @@ all: $(BIN)
 
 clean:
 	@rm -rf $(BUILD_DIR) $(OUT)
+
+lint:
+	@cpplint $(SRC)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
