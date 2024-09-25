@@ -18,7 +18,8 @@ BIN =\
 	 $(BIN_DIR)/remove\
 	 $(BIN_DIR)/read\
 	 $(BIN_DIR)/write1\
-	 $(BIN_DIR)/write2
+	 $(BIN_DIR)/write2\
+	 $(BIN_DIR)/two_instances
 OUT = newFile.txt myFile.txt modified_text.txt
 
 all: $(BIN)
@@ -60,3 +61,7 @@ $(BIN_DIR)/write1: $(OBJ_DIR)/write1.o
 
 $(OBJ_DIR)/write2.o: $(SRC_DIR)/write2.c
 $(BIN_DIR)/write2: $(OBJ_DIR)/write2.o
+
+# Chapter 8
+$(OBJ_DIR)/two_instances.o: $(SRC_DIR)/two_instances.c
+$(BIN_DIR)/two_instances: $(OBJ_DIR)/two_instances.o

@@ -35,3 +35,8 @@ chapter:
     output:
       - myFile.txt
       - modified_text.txt
+  - number: 8
+    source:
+      - src/two_instances.c
+    binary:
+      - two_instances
