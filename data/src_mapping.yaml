@@ -4,3 +4,10 @@ chapter:
       - src/hello.c
     binary:
       - hello
+  - number: 3
+    source:
+      - src/filemode.c
+    binary:
+      - filemode
+    output:
+      - newfile.txt
