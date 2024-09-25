@@ -16,3 +16,10 @@ chapter:
       - src/remove.c
     binary:
       - remove
+  - number: 5
+    source:
+      - src/read.c
+    resources:
+      - data/random_text.txt
+    binary:
+      - read

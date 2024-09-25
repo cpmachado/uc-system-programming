@@ -12,7 +12,7 @@ BIN_DIR = $(BUILD_DIR)/bin
 
 SRC = $(wildcard $(SRC_DIR)/*.c)
 OBJ = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRC))
-BIN = $(BIN_DIR)/hello $(BIN_DIR)/filemode $(BIN_DIR)/remove
+BIN = $(BIN_DIR)/hello $(BIN_DIR)/filemode $(BIN_DIR)/remove $(BIN_DIR)/read
 OUT = newFile.txt
 
 all: $(BIN)
@@ -40,3 +40,7 @@ $(BIN_DIR)/filemode: $(OBJ_DIR)/filemode.o
 # Chapter 4
 $(OBJ_DIR)/remove.o: $(SRC_DIR)/remove.c
 $(BIN_DIR)/remove: $(OBJ_DIR)/remove.o
+
+# Chapter 5
+$(OBJ_DIR)/read.o: $(SRC_DIR)/read.c
+$(BIN_DIR)/read: $(OBJ_DIR)/read.o
