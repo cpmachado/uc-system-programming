@@ -3,7 +3,7 @@
 CC ?= gcc
 CFLAGS = -W -Wall -pedantic -std=c99
 CPPFLAGS = -D_POSIX_C_SOURCE=200809L
-LDFLAGS = -lc
+LDFLAGS = -lc -lpthread
 
 SRC_DIR = src
 BUILD_DIR = build
@@ -21,7 +21,9 @@ BIN =\
 	 $(BIN_DIR)/write2\
 	 $(BIN_DIR)/two_instances\
 	 $(BIN_DIR)/execv_example\
-	 $(BIN_DIR)/simple_fork
+	 $(BIN_DIR)/simple_fork\
+	 $(BIN_DIR)/threads\
+	 $(BIN_DIR)/threads2
 OUT = newFile.txt myFile.txt modified_text.txt
 
 all: $(BIN)
@@ -39,7 +41,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 $(BIN_DIR)/%: $(OBJ_DIR)/%.o
 	@mkdir -p $(BIN_DIR)
-	$(CC) $(LDFLAGS) -o $@ $^
+	$(CC) -o $@ $^ $(LDFLAGS)
 
 # Chapter 2
 $(OBJ_DIR)/hello.o: $(SRC_DIR)/hello.c
@@ -74,3 +76,10 @@ $(BIN_DIR)/execv_example: $(OBJ_DIR)/execv_example.o
 
 $(OBJ_DIR)/simple_fork.o: $(SRC_DIR)/simple_fork.c
 $(BIN_DIR)/simple_fork: $(OBJ_DIR)/simple_fork.o
+
+# Chapter 10
+$(OBJ_DIR)/threads.o: $(SRC_DIR)/threads.c
+$(BIN_DIR)/threads: $(OBJ_DIR)/threads.o
+
+$(OBJ_DIR)/threads2.o: $(SRC_DIR)/threads2.c
+$(BIN_DIR)/threads2: $(OBJ_DIR)/threads2.o

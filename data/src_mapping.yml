@@ -47,3 +47,10 @@ chapter:
     binary:
       - execv_example
       - simple_fork
+  - number: 10
+    source:
+      - src/threads.c
+      - src/threads2.c
+    binary:
+      - threads
+      - threads2
