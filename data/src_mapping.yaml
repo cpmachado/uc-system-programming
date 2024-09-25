@@ -11,3 +11,8 @@ chapter:
       - filemode
     output:
       - newfile.txt
+  - number: 4
+    source:
+      - src/remove.c
+    binary:
+      - remove
