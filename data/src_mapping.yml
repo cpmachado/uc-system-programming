@@ -54,3 +54,8 @@ chapter:
     binary:
       - threads
       - threads2
+  - number: 11
+    source:
+      - src/simple_bounded.c
+    binary:
+      - simple_bounded

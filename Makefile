@@ -23,7 +23,8 @@ BIN =\
 	 $(BIN_DIR)/execv_example\
 	 $(BIN_DIR)/simple_fork\
 	 $(BIN_DIR)/threads\
-	 $(BIN_DIR)/threads2
+	 $(BIN_DIR)/threads2\
+	 $(BIN_DIR)/simple_bounded
 OUT = newFile.txt myFile.txt modified_text.txt
 
 all: $(BIN)
@@ -83,3 +84,7 @@ $(BIN_DIR)/threads: $(OBJ_DIR)/threads.o
 
 $(OBJ_DIR)/threads2.o: $(SRC_DIR)/threads2.c
 $(BIN_DIR)/threads2: $(OBJ_DIR)/threads2.o
+
+# Chapter 11
+$(OBJ_DIR)/simple_bounded.o: $(SRC_DIR)/simple_bounded.c
+$(BIN_DIR)/simple_bounded: $(OBJ_DIR)/simple_bounded.o
