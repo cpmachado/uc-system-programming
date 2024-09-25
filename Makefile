@@ -19,7 +19,9 @@ BIN =\
 	 $(BIN_DIR)/read\
 	 $(BIN_DIR)/write1\
 	 $(BIN_DIR)/write2\
-	 $(BIN_DIR)/two_instances
+	 $(BIN_DIR)/two_instances\
+	 $(BIN_DIR)/execv_example\
+	 $(BIN_DIR)/simple_fork
 OUT = newFile.txt myFile.txt modified_text.txt
 
 all: $(BIN)
@@ -65,3 +67,10 @@ $(BIN_DIR)/write2: $(OBJ_DIR)/write2.o
 # Chapter 8
 $(OBJ_DIR)/two_instances.o: $(SRC_DIR)/two_instances.c
 $(BIN_DIR)/two_instances: $(OBJ_DIR)/two_instances.o
+
+# Chapter 9
+$(OBJ_DIR)/execv_example.o: $(SRC_DIR)/execv_example.c
+$(BIN_DIR)/execv_example: $(OBJ_DIR)/execv_example.o
+
+$(OBJ_DIR)/simple_fork.o: $(SRC_DIR)/simple_fork.c
+$(BIN_DIR)/simple_fork: $(OBJ_DIR)/simple_fork.o

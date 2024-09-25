@@ -40,3 +40,10 @@ chapter:
       - src/two_instances.c
     binary:
       - two_instances
+  - number: 9
+    source:
+      - src/execv_example.c
+      - src/simple_fork.c
+    binary:
+      - execv_example
+      - simple_fork
