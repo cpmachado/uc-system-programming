@@ -10,7 +10,7 @@ chapter:
     binary:
       - filemode
     output:
-      - newfile.txt
+      - newFile.txt
   - number: 4
     source:
       - src/remove.c
@@ -23,3 +23,15 @@ chapter:
       - data/random_text.txt
     binary:
       - read
+  - number: 6
+    source:
+      - src/write1.c
+      - src/write2.c
+    resources:
+      - data/random_text.txt
+    binary:
+      - write1
+      - write2
+    output:
+      - myFile.txt
+      - modified_text.txt
