@@ -26,7 +26,7 @@ clean:
 	@rm -rf $(BUILD_DIR) $(OUT)
 
 lint:
-	@cpplint $(SRC)
+	@cpplint --recursive $(SRC_DIR)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(OBJ_DIR)
